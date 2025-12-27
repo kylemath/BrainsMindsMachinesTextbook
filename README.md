@@ -1,5 +1,7 @@
 # BrainsMindsMachinesTextbook
 
+🚀 **[Live Demo](https://kylemath.github.io/BrainsMindsMachinesTextbook)** 🚀
+
 A standalone textbook for Intro Neuroscience
 
 ## Getting Started
