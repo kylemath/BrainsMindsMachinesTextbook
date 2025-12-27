@@ -1,0 +1,11 @@
+{
+  "id": "BrainsMindsMachinesTextbook",
+  "title": "BrainsMindsMachinesTextbook",
+  "oneLiner": "A standalone textbook for Intro Neuroscience",
+  "demoUrl": "https://kylemath.github.io/BrainsMindsMachinesTextbook",
+  "screenshot": "https://raw.githubusercontent.com/kylemath/BrainsMindsMachinesTextbook/main/screenshot.png",
+  "kind": "longform",
+  "categories": ["neuroscience", "writing", "text"],
+  "tags": ["neuroscience", "writing", "text"],
+  "status": "published"
+}

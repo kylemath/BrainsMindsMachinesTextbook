@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Brains &amp; Minds &amp; and Machines: A Neuroscience Textbook</title>
+    <meta name="description" content="A comprehensive introduction to neuroscience, exploring how the brain creates mind, from neurons to consciousness.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="textbook.css">
+  <script src="textbook.js" defer></script>
+  <style>
+      :root {
+        --bg: #faf8f5;
+        --bg-alt: #f0ede8;
+        --text: #2c2825;
+        --text-muted: #6b6560;
+        --accent: #8b4513;
+        --accent-light: #a0522d;
+        --border: #d4cfc7;
+        --maxw: 720px;
+        --font-serif: 'Crimson Pro', Georgia, 'Times New Roman', serif;
+        --font-mono: 'JetBrains Mono', monospace;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #1a1816;
+          --bg-alt: #252220;
+          --text: #e8e4df;
+          --text-muted: #9a9590;
+          --accent: #d4a574;
+          --accent-light: #e8c4a0;
+          --border: #3d3835;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: var(--font-serif);
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.75;
+        font-size: 19px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .index-page .container {
+        max-width: var(--maxw);
+        padding: 60px 24px 100px;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 60px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .book-title {
+        font-size: clamp(2rem, 6vw, 3.2rem);
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        margin: 0 0 12px;
+        line-height: 1.2;
+      }
+
+      .book-subtitle {
+        font-size: 1.25rem;
+        color: var(--text-muted);
+        font-weight: 300;
+        font-style: italic;
+        margin: 0 0 24px;
+      }
+
+      .book-author {
+        font-size: 1rem;
+        color: var(--accent);
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      .course-graphic {
+        margin: 40px auto;
+        max-width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      }
+
+      .intro {
+        font-size: 1.1rem;
+        color: var(--text-muted);
+        margin-bottom: 50px;
+        text-align: center;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin: 50px 0 24px;
+        color: var(--text);
+        letter-spacing: -0.01em;
+      }
+
+      .toc {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .toc-section {
+        margin-bottom: 40px;
+      }
+
+      .toc-section-title {
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 16px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .toc li {
+        margin: 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .toc li:last-child {
+        border-bottom: none;
+      }
+
+      .toc a {
+        display: flex;
+        align-items: baseline;
+        gap: 16px;
+        padding: 16px 0;
+        text-decoration: none;
+        color: inherit;
+        transition: color 0.2s ease;
+      }
+
+      .toc a:hover {
+        color: var(--accent);
+      }
+
+      .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        min-width: 32px;
+      }
+
+      .chapter-title {
+        flex: 1;
+        font-weight: 400;
+      }
+
+      .chapter-desc {
+        display: block;
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        font-weight: 300;
+        margin-top: 4px;
+      }
+
+      footer {
+        margin-top: 80px;
+        padding-top: 30px;
+        border-top: 1px solid var(--border);
+        text-align: center;
+        font-size: 0.9rem;
+        color: var(--text-muted);
+      }
+
+      footer a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* Print styles for PDF export */
+      @media print {
+        body {
+          font-size: 12pt;
+          line-height: 1.6;
+          color: #000;
+          background: #fff;
+        }
+
+        .container {
+          max-width: 100%;
+          padding: 0;
+        }
+
+        .toc a {
+          color: #000;
+        }
+
+        .toc a::after {
+          content: " (p. " attr(data-page) ")";
+          font-size: 0.8em;
+          color: #666;
+        }
+      }
+
+      /* Mobile optimizations */
+      @media (max-width: 600px) {
+        body {
+          font-size: 17px;
+        }
+
+        .index-page .container {
+          padding: 40px 20px 60px;
+        }
+
+        .book-title {
+          font-size: 1.8rem;
+        }
+
+        .toc a {
+          padding: 14px 0;
+        }
+      }
+    </style>
+  </head>
+  <body class="index-page">
+    <div class="index-layout">
+      <aside class="sidebar-toc-static" id="index-sidebar"></aside>
+      <div class="container">
+      <header>
+        <h1 class="book-title">Brains, Minds, &amp; Machines</h1>
+        <p class="book-subtitle">A Journey Through Neuroscience</p>
+        <p class="book-author">Kyle Mathewson</p>
+      </header>
+
+      <img src="../Gemini_Generated_Image_w4leqiw4leqiw4le.png" alt="Course Overview: What Is a Thought? - Brain and Behavior course outline showing three sections: Foundations (Ch 0-4), Systems (Ch 5-11), and Complex States & Synthesis (Ch 12-14)" class="course-graphic">
+
+      <p class="intro">
+        This textbook explores how the brain creates the mind—from the molecular machinery of neurons 
+        to the emergence of consciousness, memory, and thought. Each chapter builds upon the last, 
+        constructing a comprehensive understanding of the biological foundations of behavior.
+      </p>
+
+      <nav>
+        <div class="toc-section">
+          <div class="toc-section-title">Part I: Foundations</div>
+          <ul class="toc">
+            <li>
+              <a href="chapter0.html">
+                <span class="chapter-num">0</span>
+                <span class="chapter-title">
+                  What Is a Thought?
+                  <span class="chapter-desc">Perceptrons, consciousness, and the fundamental question of mind</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="chapter1.html">
+                <span class="chapter-num">1</span>
+                <span class="chapter-title">
+                  A Short History of Nearly Everything About Minds
+                  <span class="chapter-desc">From the Big Bang to the brain—evolution of nervous systems</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="chapter2.html">
+                <span class="chapter-num">2</span>
+                <span class="chapter-title">
+                  The Language of Electricity
+                  <span class="chapter-desc">Action potentials, ion channels, and neural signaling</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="chapter3.html">
+                <span class="chapter-num">3</span>
+                <span class="chapter-title">
+                  Chemical Conversations
+                  <span class="chapter-desc">Synapses, neurotransmitters, and molecular communication</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="chapter4.html">
+                <span class="chapter-num">4</span>
+                <span class="chapter-title">
+                  Wiring and Rewiring
+                  <span class="chapter-desc">Synaptic plasticity, learning, and the changing brain</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="toc-section">
+          <div class="toc-section-title">Part II: Structure &amp; Systems</div>
+          <ul class="toc">
+            <li>
+              <a href="chapter5.html">
+                <span class="chapter-num">5</span>
+                <span class="chapter-title">
+                  The Architecture of Mind
+                  <span class="chapter-desc">Brain organization, regions, and the nervous system</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="chapter6.html">
+                <span class="chapter-num">6</span>
+                <span class="chapter-title">
+                  Sensing the World
+                  <span class="chapter-desc">Sensory transduction and the construction of perception</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="chapter7.html">
+                <span class="chapter-num">7</span>
+                <span class="chapter-title">
+                  Seeing Is Believing
+                  <span class="chapter-desc">The visual system from retina to cortex</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="chapter8.html">
+                <span class="chapter-num">8</span>
+                <span class="chapter-title">
+                  The Spotlight of Attention
+                  <span class="chapter-desc">Attention, audition, and selecting what matters</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="chapter9.html">
+                <span class="chapter-num">9</span>
+                <span class="chapter-title">
+                  Moving Through the World
+                  <span class="chapter-desc">Motor systems, coordination, and action</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="toc-section">
+          <div class="toc-section-title">Part III: Higher Functions</div>
+          <ul class="toc">
+            <li>
+              <a href="chapter10.html">
+                <span class="chapter-num">10</span>
+                <span class="chapter-title">
+                  Learning and Memory
+                  <span class="chapter-desc">Building a personal history through neural change</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="chapter11.html">
+                <span class="chapter-num">11</span>
+                <span class="chapter-title">
+                  Executive Function
+                  <span class="chapter-desc">The brain's CEO—planning, decision-making, and control</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="chapter12.html">
+                <span class="chapter-num">12</span>
+                <span class="chapter-title">
+                  Sleep and Consciousness
+                  <span class="chapter-desc">Biological rhythms, sleep stages, and the nature of awareness</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="chapter13.html">
+                <span class="chapter-num">13</span>
+                <span class="chapter-title">
+                  Psychopharmacology
+                  <span class="chapter-desc">Drugs, brain, and behavior—the chemistry of mind</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="chapter14.html">
+                <span class="chapter-num">14</span>
+                <span class="chapter-title">
+                  Synthesis and Future Horizons
+                  <span class="chapter-desc">Integrating insights and looking toward the future</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <footer>
+        <p>© <span id="year"></span> Kyle Mathewson · <a href="../index.html">Return to Course Site</a></p>
+        <p style="margin-top: 12px; font-size: 0.85rem;">
+          Use your browser's print function (Ctrl/Cmd + P) to save any chapter as PDF
+        </p>
+      </footer>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
+
+

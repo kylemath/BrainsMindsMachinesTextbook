@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 4: Neural Plasticity — Brain &amp; Behavior</title>
+  <meta name="description" content="Synaptic plasticity, learning, and the changing brain.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="textbook.css">
+  <script src="textbook.js" defer></script>
+</head>
+<body>
+  <article class="chapter">
+    <nav class="chapter-nav">
+      <a href="chapter3.html" class="nav-prev">Previous Chapter</a>
+      <a href="index.html" class="nav-toc">Contents</a>
+      <a href="chapter5.html" class="nav-next">Next Chapter</a>
+    </nav>
+
+    <header class="chapter-header">
+      <div class="chapter-number">Chapter Four</div>
+      <h1 class="chapter-title">Neural Plasticity</h1>
+      <p class="chapter-subtitle">How brains learn to learn</p>
+    </header>
+
+    <p class="lead">Your thoughts move at 120 meters per second, but your brain rewrites itself at the speed of experience. Today we resolve Santiago Ramón y Cajal's paradox: how apparently fixed neural structures create infinite flexibility. You'll discover that every word you hear is literally changing the physical structure of your synapses, that learning a new skill grows new brain tissue, and that forgetting is as precisely controlled as remembering. Through the molecular choreography of long-term potentiation, we'll see how calcium influx triggers protein synthesis that locks memories into synaptic architecture.</p>
+
+    <div class="divider"></div>
+
+    <h2 id="cajals-paradox">Opening: Cajal's Paradox</h2>
+
+    <p>Look at Santiago Ramón y Cajal's 1894 drawing of a Purkinje cell. Cajal spent thousands of hours at his microscope, using a technique he'd modified from Camillo Golgi, staining neurons with silver nitrate to reveal their architecture. Cajal saw what looked like fixed sculptures—beautiful, permanent, unchangeable structures frozen in biological glass. The neurons he drew in 1894 looked exactly like the neurons he drew in 1904. Yet this same man wrote something that should have been impossible given what he was seeing: "Every man can, if he so desires, become the sculptor of his own brain."</p>
+
+    <p>How could Cajal believe in brain sculpting when he was staring at apparently fixed architecture? He had noticed something peculiar in his preparations—neurons from musicians had denser dendritic trees in motor areas, neurons from scholars showed elaborations in association cortices, and most mysteriously, neurons from young animals looked different from old ones even when stained identically. The structure was stable, yes, but something about the connections, their strength, their efficacy, was fluid. Cajal was seeing the shadows of plasticity without having the tools to measure it directly.</p>
+
+    <p>Today, we're going to discover how your brain is rewriting itself at this very moment. Every word you read, every concept you grasp, every moment of confusion followed by clarity—all of these are literally changing the physical structure of your neural connections. Neural plasticity, or neuroplasticity, refers to the brain's ability to reorganize itself by forming new neural connections throughout life. You started reading this chapter with one brain, and you'll finish with another. The question isn't whether your brain will change—it's how much, where, and whether those changes will last until tomorrow.</p>
+
+    <div class="divider"></div>
+
+    <h2 id="symphony-so-far">The Symphony We've Built So Far</h2>
+
+    <h3 id="neural-architecture">Neural Architecture Review</h3>
+
+    <p>Let's reconstruct what we know about the hardware that makes plasticity possible. The dendrites are the listeners of the neural world, spreading like roots to collect whispers from thousands of other neurons. Each dendritic branch acts as an antenna, but not a passive one—these structures perform spatial and temporal summation, adding signals that arrive at nearby locations or in quick succession. The cell body, or soma, serves as the integration zone where all these whispers get tallied into a single decision: fire or don't fire.</p>
+
+    <p>The axon terminal is where the electrical signal gets translated into chemical language. This isn't just a wire touching another wire—it's a sophisticated broadcasting station with pools of vesicles ready to release, specialized machinery for fusion, and recycling systems to sustain transmission. Each component is optimized for the fundamental trade-off of the nervous system: information processing versus energy consumption. Your brain uses 20% of your body's energy budget to maintain these structures and their activity.</p>
+
+    <h3 id="chemical-transmission">Chemical Transmission Mastery</h3>
+
+    <p>The synaptic gap is only 20 nanometers wide—that's 5,000 times thinner than a human hair—but it's where the real computation happens. The nervous system has three types of synapses, each with different computational roles. Axodendritic synapses, the most common, allow modulation of input signals before they reach the cell body. Axosomatic synapses, landing directly on the cell body, have powerful, immediate effects on whether a neuron fires. Axoaxonic synapses are the modulators, sitting on other synapses to regulate their function.</p>
+
+    <div class="divider"></div>
+
+    <h2 id="plasticity-revolution">The Plasticity Revolution: How Experience Becomes Structure</h2>
+
+    <h3 id="two-forms">Two Forms of Synaptic Plasticity</h3>
+
+    <p>The word "plasticity" comes from the Greek "plastikos," meaning "capable of being shaped or molded." In the nervous system, we see two fundamental forms of this moldability. <strong>Homosynaptic or intrinsic plasticity</strong> refers to changes in synaptic strength brought about by the synapse's own activity—the synapse modifies itself based on its own history. <strong>Heterosynaptic or extrinsic plasticity</strong> involves changes triggered by activity in other pathways—the synapse is modified by external influences.</p>
+
+    <p>Let me demonstrate homosynaptic plasticity with a simple experiment we've replicated thousands of times. Stimulate a sensory neuron once, and it produces a 1 millivolt EPSP in its target motor neuron. Stimulate it again 200 milliseconds later, and the second EPSP is only 0.7 millivolts—this is <strong>synaptic depression</strong>, caused by depletion of readily-releasable vesicles. But if you wait just 20 milliseconds between stimuli, the second EPSP is 2 millivolts—this is <strong>twin-pulse facilitation</strong>, caused by residual calcium from the first pulse adding to calcium from the second.</p>
+
+    <p>Donald Hebb crystallized the principle in 1949: "Cells that fire together, wire together." But he couldn't have imagined the molecular machinery that would validate his prophecy.</p>
+
+    <div class="divider"></div>
+
+    <h2 id="ltp-discovery">Long-Term Potentiation: The Discovery That Changed Everything</h2>
+
+    <p>In 1973, two researchers in Oslo forever changed how we think about memory. Terje Lømo and Timothy Bliss were working with anesthetized rabbits, recording from the dentate gyrus while stimulating the perforant path from the entorhinal cortex. They would deliver a test stimulus every few seconds, recording a stable EPSP of about 2 millivolts. Then they delivered their tetanus—100 pulses at 100 Hz, a mere one second of intense stimulation.</p>
+
+    <p>What happened next seemed impossible. The same test stimulus that had produced 2 millivolt EPSPs before the tetanus now produced 5 millivolt responses. More remarkably, this enhancement lasted for hours, sometimes days. They had discovered <strong>long-term potentiation</strong>—LTP—the first physiological phenomenon with the staying power necessary to explain memory.</p>
+
+    <h3 id="nmda-receptor">The NMDA Receptor: Nature's Coincidence Detector</h3>
+
+    <p>Let me show you the molecular choreography that makes LTP possible. The postsynaptic spine at a typical CA3 to CA1 synapse in the hippocampus contains two types of glutamate receptors. AMPA receptors are straightforward—glutamate binds, the channel opens, sodium enters, causing depolarization. But NMDA receptors are molecular coincidence detectors with an elegant trick. At resting potential, a magnesium ion sits in the channel pore like a cork in a bottle. Even if glutamate binds, no current flows—the magnesium blocks everything.</p>
+
+    <p>During weak stimulation, only AMPA receptors contribute to the response. But during a tetanus, something beautiful happens. The temporal and spatial summation of many inputs depolarizes the postsynaptic membrane significantly. As the inside of the cell becomes less negative, reaching about -35 millivolts, the magnesium ion is electrically repelled from its binding site. The NMDA channel opens, and calcium floods in.</p>
+
+    <p>This calcium is the trigger for everything that follows. It activates calcium/calmodulin-dependent kinase II (CaMKII), which phosphorylates existing AMPA receptors, making them more sensitive. More dramatically, it triggers the insertion of entirely new AMPA receptors into the membrane.</p>
+
+    <div class="divider"></div>
+
+    <h2 id="ltd">Long-Term Depression: The Art of Forgetting</h2>
+
+    <p>If LTP is the accelerator of synaptic strength, long-term depression (LTD) is the brake—and you need both to drive effectively. A synapse that could only strengthen would saturate, losing its ability to encode new information. LTD isn't forgetting; it's selective refinement, the neural equivalent of a sculptor removing excess marble.</p>
+
+    <p>The induction protocol is LTP's mirror image: instead of brief, high-frequency stimulation, LTD requires prolonged low-frequency stimulation—typically 1 Hz for 15 minutes. This produces a modest calcium influx, enough to activate phosphatases but not kinases. The phosphatases remove phosphate groups from AMPA receptors, making them less sensitive, and trigger the removal of receptors from the membrane entirely.</p>
+
+    <p>The cerebellum has turned LTD into an art form for motor learning. Every time you make a movement error, climbing fibers from the inferior olive deliver a teaching signal to Purkinje cells, inducing LTD at the parallel fiber synapses that caused the error. This is how you learned to ride a bicycle—by weakening the synapses that produced wobbles and falls.</p>
+
+    <div class="divider"></div>
+
+    <h2 id="stdp">Spike-Timing Dependent Plasticity (STDP)</h2>
+
+    <p>The brain faces a credit assignment problem: when a neuron fires, which of the thousands of inputs that preceded it should be strengthened? The answer is breathtakingly precise. If a presynaptic spike arrives just before a postsynaptic spike—within 20 milliseconds—that synapse is strengthened. The input is credited with contributing to the output. But if the presynaptic spike arrives just after the postsynaptic spike, the synapse is weakened.</p>
+
+    <p>This spike-timing dependent plasticity operates on the scale of milliseconds. A difference of 10 milliseconds can determine whether a synapse strengthens or weakens, whether a memory forms or fades. The mechanism involves backpropagating action potentials—when a neuron fires, the signal doesn't just go forward down the axon, it also propagates backward into the dendrites, announcing to all synapses: "The cell just fired."</p>
+
+    <h3 id="structural-plasticity">Structural Plasticity: The Shapeshifters</h3>
+
+    <p>We've been talking about functional changes—the same structures working differently. But the brain also undergoes structural plasticity—the physical architecture itself changes. Dendritic spines, those tiny protrusions where excitatory synapses form, are the most dynamic structures in your brain.</p>
+
+    <p>Spines come in distinct flavors, each with different functions. <strong>Filopodia</strong> are the seekers—thin, highly motile projections that sample the environment for new synaptic partners. <strong>Thin spines</strong> are the learners—flexible structures with small heads that can rapidly strengthen or weaken. <strong>Mushroom spines</strong> are the memories—large, stable structures with big heads that can persist for months or years.</p>
+
+    <p>Two-photon microscopy has revealed a truth that would have stunned Cajal: spines appear and disappear in living brains over hours. In motor cortex during skill learning, 10-15% of spines turn over daily. During sleep, weak spines are selectively eliminated while strong ones are preserved—your brain literally prunes connections while you dream.</p>
+
+    <div class="divider"></div>
+
+    <h2 id="critical-periods">Critical Periods: Windows of Opportunity</h2>
+
+    <h3 id="hubel-wiesel">Hubel and Wiesel's Kittens</h3>
+
+    <p>David Hubel and Torsten Wiesel's experiments in the 1960s were elegant in design and troubling in implication. They sutured one eye closed in newborn kittens, then examined the visual cortex weeks later. What they found revolutionized neuroscience: neurons that should have responded to both eyes now responded only to the eye that had remained open. The deprived eye hadn't gone blind—the retina was fine—but the cortical territory had been conquered by the experienced eye.</p>
+
+    <p>The crucial discovery was timing. The same deprivation in adult cats had minimal effect. There was a critical period, from about 3 weeks to 3 months in cats, when visual experience literally shaped the physical architecture of visual cortex. Miss this window, and the organization became permanent.</p>
+
+    <h3 id="language-pitch">Language and Perfect Pitch</h3>
+
+    <p>Perfect pitch provides a more benign window into critical periods. Children who begin musical training before age seven are far more likely to develop absolute pitch—the ability to identify or produce notes without a reference. But here's the fascinating part: speakers of tonal languages like Mandarin, where pitch carries meaning, are nine times more likely to have perfect pitch. Their language experience during the critical period tunes their auditory system differently.</p>
+
+    <div class="divider"></div>
+
+    <h2 id="adult-neurogenesis">Adult Neurogenesis: The Brain That Keeps Growing</h2>
+
+    <p>For most of the 20th century, neuroscience dogma held that adult brains don't generate new neurons. This dogma died in the 1990s when researchers discovered that the adult human brain produces about 2000 new neurons every day in the dentate gyrus of the hippocampus.</p>
+
+    <p>Physical exercise doubles the rate of neurogenesis. When mice run on wheels, their dentate gyrus blooms with new neurons. This isn't just correlation—the new neurons are necessary for the cognitive benefits of exercise. Block neurogenesis pharmacologically, and exercise no longer improves memory. This is why that morning run makes you mentally sharper—you're literally growing new brain cells.</p>
+
+    <h3 id="london-taxi">The London Taxi Driver Study</h3>
+
+    <p>The famous London taxi driver study revealed that spatial learning physically changes brain structure. Trainee drivers studying "The Knowledge"—London's 25,000 streets—show progressive growth of posterior hippocampus over their 3-4 year training. The volume increase correlates with navigation performance. Their brains literally expand to accommodate the map of London.</p>
+
+    <div class="divider"></div>
+
+    <h2 id="consolidation">Memory Consolidation: From Hippocampus to Cortex</h2>
+
+    <p>The memories forming in your hippocampus right now face a journey. If deemed important, they'll gradually transfer to cortex through systems consolidation—a process that can take years. The hippocampus is like a temporary holding area, keeping memories until cortex is ready to store them permanently.</p>
+
+    <p>During sleep, your brain replays the day's experiences at high speed. Sharp-wave ripples in the hippocampus—brief bursts at 150-250 Hz—compress hours of experience into seconds of replay. This replay drives the gradual transfer to cortical storage.</p>
+
+    <p>Here's the twist that explains why eyewitness testimony is unreliable: <strong>reconsolidation</strong>. When you recall a memory, it becomes temporarily labile again, requiring new protein synthesis to restabilize. During this window, the memory can be modified, updated, or even erased. Every time you remember something, you literally re-write it.</p>
+
+    <div class="divider"></div>
+
+    <h2 id="ai-connection">Connecting to AI: What Machines Still Can't Do</h2>
+
+    <p>Artificial neural networks face a problem biological networks solved: catastrophic forgetting. Train a network on task A, then train it on task B, and it forgets task A. But you can learn Spanish without forgetting English. How?</p>
+
+    <p>The complementary learning systems theory proposes that hippocampus and cortex have different learning rates for good reason. Hippocampus learns fast but has limited capacity—it's the RAM. Cortex learns slowly but has vast capacity—it's the hard drive. The slow cortical learning prevents catastrophic forgetting by gradually interleaving new information with old.</p>
+
+    <p>DeepMind's Deep Q-Network borrowed this biological insight, implementing experience replay similar to hippocampal sharp-wave ripples. But artificial networks still miss crucial elements. They lack energy constraints—backpropagation requires computing gradients that biology can't access. They lack neuromodulation—dopamine, serotonin, acetylcholine that gate plasticity. Most critically, they lack embodiment.</p>
+
+    <footer class="chapter-footer">
+      <nav class="chapter-footer-nav">
+        <a href="chapter3.html" class="prev">
+          <span class="label">Previous Chapter</span>
+          <span class="title">Chemical Conversations</span>
+        </a>
+        <a href="chapter5.html" class="next">
+          <span class="label">Next Chapter</span>
+          <span class="title">The Architecture of Mind</span>
+        </a>
+      </nav>
+    </footer>
+  </article>
+
+  <script>
+    function updateProgress() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      document.getElementById('progress-bar').style.width = progress + '%';
+      document.getElementById('percent-read').textContent = Math.round(progress) + '%';
+    }
+
+    function buildOutline() {
+      const headings = document.querySelectorAll('h2[id], h3[id]');
+      const outlineList = document.getElementById('outline-list');
+      headings.forEach(heading => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = '#' + heading.id;
+        a.textContent = heading.textContent;
+        if (heading.tagName === 'H3') a.classList.add('h3-item');
+        li.appendChild(a);
+        outlineList.appendChild(li);
+      });
+    }
+
+    function updateActiveSection() {
+      const headings = document.querySelectorAll('h2[id], h3[id]');
+      const links = document.querySelectorAll('.outline-list a');
+      let current = '';
+      headings.forEach(heading => {
+        if (heading.getBoundingClientRect().top <= 100) current = heading.id;
+      });
+      links.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', buildOutline);
+    window.addEventListener('scroll', () => { updateProgress(); updateActiveSection(); });
+    updateProgress();
+  </script>
+</body>
+</html>

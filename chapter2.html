@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 2: Electric Flesh and Fire — Brain &amp; Behavior</title>
+  <meta name="description" content="The biophysics of thought—action potentials, ion channels, and neural signaling.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="textbook.css">
+  <script src="textbook.js" defer></script>
+</head>
+<body>
+  <article class="chapter">
+    <nav class="chapter-nav">
+      <a href="chapter1.html" class="nav-prev">Previous Chapter</a>
+      <a href="index.html" class="nav-toc">Contents</a>
+      <a href="chapter3.html" class="nav-next">Next Chapter</a>
+    </nav>
+
+    <header class="chapter-header">
+      <div class="chapter-number">Chapter Two</div>
+      <h1 class="chapter-title">Electric Flesh and Fire</h1>
+      <p class="chapter-subtitle">The biophysics of thought</p>
+    </header>
+
+    <p class="lead">Your thoughts move at 120 meters per second—the speed of a Formula 1 car—yet this biological lightning is a million times slower than electricity in copper wire. Today we decode the most elegant hack in evolutionary history: how life transforms a 70-millivolt battery smaller than a virus into the computational foundation of consciousness. We'll discover why your brain burns 20% of your calories just maintaining electrical readiness, how a single sodium channel mutation can eliminate pain perception while leaving touch intact, and why some marine animals evolved unique oxygen-transport systems to support their neural demands. Through Hodgkin and Huxley's Nobel Prize-winning equations, we'll see how nature invented the transistor 3 billion years before Silicon Valley—and did it better. Prepare to calculate the exact speed of your own thoughts, understand why multiple sclerosis specifically attacks the fastest neurons, and confront the thermodynamic paradox that every thought you think hastens the heat death of the universe.</p>
+
+    <div class="divider"></div>
+
+    <h2 id="voltage-of-life">The Voltage of Life: Three Billion Years of Electrical Evolution</h2>
+
+    <p>Today we focus purely on ELECTRICAL signaling—how signals travel WITHIN neurons. Next chapter we'll explore CHEMICAL signaling—how signals jump BETWEEN neurons.</p>
+
+    <p>Life is fundamentally electrical. Not metaphorically, not poetically—literally. Three billion years before the first neuron fired, bacteria were already generating action potentials. The story begins at alkaline hydrothermal vents on the Archaean ocean floor, where Nick Lane and Bill Martin's revolutionary hypothesis places life's origin not in a warm pond but in a natural battery. These vents created proton gradients—acidic seawater meeting alkaline vent fluid—across thin mineral membranes. This massive difference in proton concentration creates electrical potential similar to the membrane potentials that drive your thoughts right now. Life didn't evolve membrane potentials; life IS membrane potentials. The ability to maintain voltage gradients across membranes was the founding principle of cellular existence.</p>
+
+    <p>Consider this: maintaining your resting potential is expensive. Your brain's roughly 86 billion neurons collectively burn about 7 calories per minute—just maintaining readiness to think. Not thinking, just being ready to think. Attwell and Laughlin's calculations show that the vast majority of the brain's energy goes to maintaining resting potentials and generating action potentials—the electrical foundation that makes all neural computation possible. This is why your brain, just 2% of body weight, consumes 20% of your oxygen and glucose. Evolution shaped every aspect of neural architecture around this energetic constraint. Neurons can't be too long (resistance increases with length), can't fire too fast (each spike costs hundreds of millions of ATP molecules), and can't be too numerous (metabolic limits). The human brain operates at the thermodynamic edge of what's possible.</p>
+
+    <p>The most controversial finding in modern biophysics: bacteria have action potentials. Gürol Süel's lab at UCSD discovered that Bacillus subtilis biofilms propagate electrical signals through potassium channels identical in structure to yours. When nutrients run low in the biofilm center, bacteria fire action potentials that propagate outward slowly, recruiting distant cells to join the colony. These bacterial spikes follow Hodgkin-Huxley dynamics—the same equations that govern your neurons. The channels involved are structurally similar to human voltage-gated potassium channels, suggesting that the molecular machinery for electrical signaling evolved once, billions of years ago. Your thoughts use the same basic technology as bacterial communication.</p>
+
+    <div class="divider"></div>
+
+    <h2 id="hodgkin-huxley">The Hodgkin-Huxley Revolution: How Squid Taught Us Consciousness</h2>
+
+    <p>Alan Hodgkin and Andrew Huxley chose the Atlantic squid not for its intelligence but for its giant axons—about half a millimeter in diameter, roughly 1000 times thicker than yours, visible to the naked eye. They needed this size because 1940s electronics couldn't record from normal neurons. Working through World War II blackouts in Plymouth, they developed the voltage clamp technique: forcing the membrane to specific voltages while measuring the resulting current. What they discovered revolutionized neuroscience and earned the 1963 Nobel Prize. The action potential isn't a simple electrical pulse—it's an orchestrated dance of ion channels opening and closing with millisecond precision. Sodium channels open first (activation), driving membrane potential from about -70mV to +40mV in less than a millisecond. Then they inactivate—not close, but enter a special non-conducting state. Meanwhile, potassium channels open slowly, repolarizing the membrane. This creates the absolute refractory period: no matter how strong the stimulus, you cannot generate another action potential for 1-2 milliseconds.</p>
+
+    <p>The mathematical beauty of Hodgkin-Huxley equations lies in their universality. They modeled sodium conductance as g_Na = ḡ_Na × m³h, where m represents activation gates and h represents inactivation. The cubic power of m means three independent gates must open simultaneously—explaining the sigmoid shape of the action potential rising phase. These equations, derived from squid at cool temperatures, accurately predict action potentials in human neurons at body temperature when adjusted for temperature effects. Modern patch-clamp recordings confirm their accuracy down to single channels. Each sodium channel is a large protein complex with four domains, each containing six transmembrane helices. The S4 helix, with positive charges every third residue, acts as the voltage sensor, physically moving outward when the membrane depolarizes, pulling the channel open.</p>
+
+    <p>Here's what should blow your mind: these channels are selective enough to distinguish sodium from potassium—atoms nearly identical in size—yet pass millions of ions per second, approaching the physical limits of diffusion. The selectivity filter achieves this through precise carbonyl oxygen spacing that perfectly mimics sodium's hydration shell. Rod MacKinnon's crystallography work (2003 Nobel Prize) revealed that potassium channels use a different strategy: the filter is exactly the right size for dehydrated K+, but too large for Na+. The energy cost of dehydrating sodium exceeds the stabilization from filter binding, creating thousands-fold selectivity. This atomic-level precision, evolved through random mutation and selection, exceeds anything human engineering has achieved.</p>
+
+    <div class="divider"></div>
+
+    <h2 id="speed-of-thought">The Speed of Thought: Why You're Slower Than You Think</h2>
+
+    <p>If your neurons conducted electricity like copper wire, a signal would travel from brain to toe in 10 microseconds. Instead, it takes 20 milliseconds—2,000 times slower. This is because neurons don't conduct electricity; they regenerate it. Each patch of membrane must generate its own action potential, like a line of dominoes where each piece must fall completely before triggering the next. Unmyelinated axons conduct at just 1 meter per second. At this speed, a signal from your brain to your hand would take a full second—making piano playing impossible. Evolution's solution was myelination: wrapping axons in lipid insulation that increases membrane resistance 5,000-fold and decreases capacitance 50-fold. But the real genius is saltatory conduction—from Latin saltare, "to jump."</p>
+
+    <p>Myelin doesn't just insulate; it fundamentally changes how signals propagate. In myelinated axons, action potentials only occur at nodes of Ranvier—tiny gaps every millimeter or two where sodium channels cluster at extraordinary densities. Between nodes, the signal travels as passive current flow—actual electrical conduction—at near-copper speeds. The action potential "jumps" from node to node, increasing velocity 100-fold while using 100 times less energy. Oligodendrocytes in your brain can myelinate up to 50 axon segments simultaneously, each wrapping 20-200 times, creating a structure with more membrane than the rest of the neuron combined. A single oligodendrocyte produces its own weight in membrane every day—the most prolific manufacturing process in your body.</p>
+
+    <p>The evolutionary history of myelin reveals nature's design constraints. Invertebrates never evolved true myelin (though some have analogous structures), instead achieving fast conduction through giant axons. The squid giant axon conducts at 25 m/s with a 500-micrometer diameter. To achieve the same speed, a myelinated human axon needs only about a hundredth of the diameter—vastly less volume. This space efficiency enabled complex brains: your corpus callosum contains hundreds of millions of myelinated axons in the space a squid would need for far fewer unmyelinated ones. But myelin came with a terrible vulnerability: it's the primary target in multiple sclerosis, where immune cells attack oligodendrocytes. As myelin degrades, conduction slows, then fails entirely. Patients experience this as progressive paralysis, blindness, and cognitive decline—consciousness literally disconnecting from itself as the white matter highways dissolve.</p>
+
+    <div class="divider"></div>
+
+    <h2 id="channelopathies">When Electricity Fails: Channelopathies and Consciousness</h2>
+
+    <p>In 2006, Cambridge researchers found a Pakistani boy who performed street theater by walking on burning coals and stabbing knives through his arms—feeling nothing. He had congenital insensitivity to pain caused by mutations in SCN9A, the gene encoding Nav1.7 sodium channels. These channels are expressed specifically in nociceptors (pain-sensing neurons) but nowhere else critical. The boy could feel touch, temperature, pressure—everything except pain. He died at 14, jumping from a roof to impress friends, never feeling the warnings that keep the rest of us alive. His family members with the same mutation showed similar patterns: multiple fractures, missing tongue tips from unconscious chewing, burns from unknowingly touching hot surfaces. Yet their intelligence, motor control, and other senses remained perfect. One channel, one sensation—surgical precision in a system we barely understand.</p>
+
+    <p>On the opposite extreme, mutations in the same Nav1.7 channel cause erythromelalgia—burning pain so severe that patients keep their limbs in ice water, sometimes requiring amputation. The mutation shifts the channel's activation voltage by a tiny amount—just a few percent—making pain neurons hyperexcitable. Patients describe feeling like their hands are in boiling oil, triggered by temperatures above 15°C. The same channel, different mutations: no pain or infinite pain. Pharmaceutical companies have invested heavily in trying to develop Nav1.7 blockers as ideal painkillers—eliminating pain without affecting consciousness, movement, or sensation. So far, success has been limited because Nav1.7 is very similar to other sodium channels in the brain and heart. Block the wrong channel and you die.</p>
+
+    <p>Epilepsy represents electrical failure at the network level—consciousness fragmenting as normal firing patterns collapse into hypersynchrony. Dravet syndrome, caused by SCN1A mutations, demonstrates how subtle the balance is. The mutation specifically affects inhibitory interneurons more than excitatory neurons, shifting the entire network toward hyperexcitability. During seizures, millions of neurons fire in perfect synchrony—the opposite of the desynchronized patterns of normal consciousness. EEG recordings show characteristic spike-wave patterns: neurons firing together in synchrony, then silence, then firing again—overriding normal individual neural activity. Patients describe the aura before seizures in mystical terms: déjà vu, jamais vu, overwhelming fear or ecstasy, smelling burning rubber, hearing celestial music. Dostoevsky, who had temporal lobe epilepsy, wrote: "For several seconds I experience such happiness as is impossible under ordinary conditions... I would give my whole life for this one instant."</p>
+
+    <div class="divider"></div>
+
+    <h2 id="demonstrations">Live Demonstrations: Measuring Your Own Neural Velocity</h2>
+
+    <p><strong>Demonstration 1: Nerve Conduction Velocity</strong></p>
+
+    <p>Everyone partner up. We're going to measure the speed of signals in your ulnar nerve—the one that creates that "funny bone" sensation. Person A: extend your arm on the desk, palm up. Person B: you'll tap two locations and measure the time difference. First, tap the inside of A's wrist (where you feel the pulse). Count "one-Mississippi" at normal speed—about one second. Now tap the inside of their elbow, right where the ulnar nerve runs superficially. Person A: raise your other hand the instant you feel each tap. Person B: estimate the delay between tap and hand raise. Most of you will detect a small delay difference between wrist and elbow responses. The distance is roughly 25 centimeters. This translates to about 15-20 m/s for slower nerve fibers carrying touch. Your motor response travels faster—about 60 m/s in myelinated fibers—but the measurement is contaminated by processing time.</p>
+
+    <p>The delay you're measuring includes several components: sensory transduction (1-2ms), conduction to spinal cord (5-15ms depending on distance), processing time in the spinal cord (we'll explore this next week), and motor conduction back (5-10ms). Professional neurologists use electrical stimulation and recording electrodes to isolate pure conduction velocity, finding 50-70 m/s in healthy myelinated fibers. In diabetic neuropathy, conduction slows as high blood sugar damages nerves. In Guillain-Barré syndrome, where antibodies attack peripheral myelin, conduction can slow to 5 m/s—so slow that patients watch their hand move seconds after willing it.</p>
+
+    <p><strong>Demonstration 2: The Refractory Period</strong></p>
+
+    <p>Here's why you can't tickle yourself: your cerebellum predicts self-generated sensations and cancels them out. But we can demonstrate the refractory period directly. Tap your finger rapidly on the desk—as fast as you possibly can. Count the taps for 10 seconds. Most of you achieve 5-7 taps per second maximum. This isn't limited by muscle speed (hummingbird wings beat at 80 Hz using the same actin-myosin machinery). It's limited by motor neuron refractory periods. Each action potential requires 2-3 milliseconds absolute refractory period plus 3-5 milliseconds relative refractory period where a stronger stimulus is needed. Your maximum voluntary firing rate is a few hundred times per second, but maintaining this is metabolically impossible—each spike consumes hundreds of millions of ATP molecules.</p>
+
+    <p>Professional pianists can play individual notes at 15-20 per second—approaching physiological limits. But they achieve faster passages through a trick: alternating fingers use different motor neurons, each recovering while others fire. Rachmaninoff's Third Piano Concerto requires 30 notes per second in some passages—impossible for single motor units but achievable through parallel processing. The same principle enables speech: you produce 15 phonemes per second by coordinating hundreds of motor units in tongue, lips, larynx, and diaphragm, each firing at sustainable rates while creating the illusion of continuous sound.</p>
+
+    <div class="divider"></div>
+
+    <h2 id="thermodynamics">The Thermodynamics of Thought</h2>
+
+    <p>The second law of thermodynamics states that entropy always increases, and thinking is no exception. Each action potential dissipates energy as heat: sodium entering through channels releases the energy stored in its concentration gradient, while the sodium-potassium pump burns ATP to restore it. The efficiency is remarkable—about 25% of the energy maintains information transmission while 75% becomes heat. Compare this to a computer processor that wastes over 99% of its energy as heat. But this still means your brain generates 20 watts of heat—enough to damage proteins if not constantly cooled by blood flow. This is why fever above 42°C causes seizures and death: proteins denature, ion channels fail, and consciousness dissolves into thermal noise.</p>
+
+    <p>The deeper implication is that consciousness might be thermodynamically inevitable. Jeremy England's theory of dissipative adaptation suggests that matter naturally organizes to increase entropy production. Neural networks are extraordinarily good at this: taking low-entropy sensory information and producing high-entropy heat while extracting patterns. Your brain is essentially a 1.4-kilogram entropy pump, converting information into heat at the theoretical limits of efficiency. This isn't a bug—it's the feature. The price of consciousness is contributing to universal heat death, one thought at a time.</p>
+
+    <div class="divider"></div>
+
+    <h2 id="next-time">Next Time: Synapses — Where Electricity Becomes Chemistry</h2>
+
+    <p>Today we traced the electrical signal to the axon terminal and stopped. Next class, we'll see what happens when that electrical wave crashes into the end of the neuron. Chapter 3 reveals how neurons solve the fundamental problem of communication: turning electrical signals into chemical messages that can convey meaning, not just magnitude. We'll explore how a 20-nanometer synaptic cleft becomes the site of all learning, memory, and thought. You'll discover why the brain uses 100+ neurotransmitters when one would suffice, how calcium orchestrates vesicle fusion with atomic precision, and why synaptic transmission fails 70% of the time—on purpose. We'll examine how LSD hijacks serotonin receptors to dissolve ego boundaries, why Botox paralyzes by blocking acetylcholine release, and how tetanus toxin travels backward through synapses to cause lockjaw. Most remarkably: we'll see evidence that quantum tunneling enables neurotransmitter release, making consciousness partially quantum mechanical—not mystically, but measurably. Come prepared to calculate synaptic delays, understand vesicle recycling, and confront the beautiful inefficiency that makes thought possible.</p>
+
+    <footer class="chapter-footer">
+      <nav class="chapter-footer-nav">
+        <a href="chapter1.html" class="prev">
+          <span class="label">Previous Chapter</span>
+          <span class="title">A Short History of Nearly Everything About Minds</span>
+        </a>
+        <a href="chapter3.html" class="next">
+          <span class="label">Next Chapter</span>
+          <span class="title">Chemical Conversations</span>
+        </a>
+      </nav>
+    </footer>
+  </article>
+
+  <script>
+    // Reading progress bar
+    function updateProgress() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      document.getElementById('progress-bar').style.width = progress + '%';
+      document.getElementById('percent-read').textContent = Math.round(progress) + '%';
+    }
+
+    // Build outline from h2 and h3 elements
+    function buildOutline() {
+      const headings = document.querySelectorAll('h2[id], h3[id]');
+      const outlineList = document.getElementById('outline-list');
+      
+      headings.forEach(heading => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = '#' + heading.id;
+        a.textContent = heading.textContent;
+        if (heading.tagName === 'H3') {
+          a.classList.add('h3-item');
+        }
+        li.appendChild(a);
+        outlineList.appendChild(li);
+      });
+    }
+
+    // Highlight current section in outline
+    function updateActiveSection() {
+      const headings = document.querySelectorAll('h2[id], h3[id]');
+      const links = document.querySelectorAll('.outline-list a');
+      
+      let current = '';
+      headings.forEach(heading => {
+        const rect = heading.getBoundingClientRect();
+        if (rect.top <= 100) {
+          current = heading.id;
+        }
+      });
+
+      links.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', buildOutline);
+    window.addEventListener('scroll', () => {
+      updateProgress();
+      updateActiveSection();
+    });
+    updateProgress();
+  </script>
+</body>
+</html>

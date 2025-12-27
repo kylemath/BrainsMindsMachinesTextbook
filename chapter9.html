@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 9 — Motor Control: From Thought to Action</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="textbook.css">
+  <script src="textbook.js" defer></script>
+</head>
+<body>
+  <article class="chapter">
+    <nav class="chapter-nav">
+      <a href="chapter8.html" class="nav-prev">Previous Chapter</a>
+      <a href="index.html" class="nav-toc">Contents</a>
+      <a href="chapter10.html" class="nav-next">Next Chapter</a>
+    </nav>
+
+    <header class="chapter-header">
+      <div class="chapter-number">Chapter Nine</div>
+      <h1 class="chapter-title">Motor Control</h1>
+      <p class="chapter-subtitle">From thought to action—how the brain commands movement</p>
+    </header>
+
+    <p class="lead">Right now, you are performing one of the most computationally complex tasks in the known universe: sitting upright while reading. Your brain is commanding hundreds of muscles to contract in precise sequences, maintaining balance against gravity, making tiny eye movements to scan these words, perhaps shifting your weight, breathing automatically, and preparing to turn the page. Every movement—from threading a needle to hitting a tennis serve—requires transforming abstract intentions into coordinated patterns of muscle activation across hundreds of degrees of freedom.</p>
+
+    <div class="divider"></div>
+
+    <h2>Opening: The Degrees of Freedom Problem</h2>
+
+    <p>Russian neurophysiologist Nikolai Bernstein posed what became known as the <strong>degrees of freedom problem</strong>: the human body has over 600 muscles and 200 bones connected by multiple joints, each with multiple degrees of freedom. To reach for a coffee cup, your nervous system must specify the activation levels of dozens of muscles. Yet there are infinite combinations of joint angles that could place your hand at the cup's location—infinite solutions to the same movement problem. How does your brain choose one solution from infinite possibilities, and how does it do so in milliseconds?</p>
+
+    <p>The answer involves hierarchical control. High-level areas specify abstract goals ("grasp the cup"). Intermediate areas translate goals into trajectories and postures. Lower areas translate postures into muscle activations. The spinal cord executes basic reflexes and rhythmic patterns. Each level solves part of the computational problem, reducing complexity through layered abstraction.</p>
+
+    <h2>Motor Units: The Quantum of Movement</h2>
+
+    <h3>Alpha Motor Neurons and Muscle Innervation</h3>
+
+    <p>A motor unit is the fundamental element of motor control: one alpha motor neuron and all the muscle fibers it innervates. When an alpha motor neuron fires an action potential, all its muscle fibers contract synchronously. You cannot activate muscle fibers individually—the motor unit is the smallest controllable element. Different muscles have different innervation ratios. In muscles requiring fine control—extraocular muscles moving your eyes, intrinsic hand muscles—one motor neuron might innervate only 3-10 muscle fibers. In large postural muscles like gastrocnemius (calf)—a single motor neuron might innervate 1,000-2,000 fibers.</p>
+
+    <p>Motor units come in three types. <strong>Slow (Type I)</strong> motor units have small motor neurons, produce low force, resist fatigue, and are recruited first. <strong>Fast fatigue-resistant (Type IIa)</strong> motor units are intermediate. <strong>Fast fatigable (Type IIb)</strong> motor units have large motor neurons, produce high force, fatigue rapidly, and are recruited last. This follows the <strong>size principle</strong>, discovered by Elwood Henneman: motor neurons are recruited in order of size, from smallest to largest, as force demands increase.</p>
+
+    <h3>Muscle Receptors: Proprioception and Feedback</h3>
+
+    <p><strong>Muscle spindles</strong> are stretch receptors embedded in parallel with muscle fibers, detecting muscle length and velocity of stretch. Each spindle contains specialized intrafusal fibers with sensory afferents wrapped around their central region. Group Ia afferents signal both length and velocity; Group II afferents signal mainly length. When a muscle is stretched, spindle afferents fire, providing the CNS with real-time information about muscle state.</p>
+
+    <p>Intrafusal fibers have contractile ends innervated by <strong>gamma motor neurons</strong>. When gamma motor neurons fire, they contract the spindle's ends, increasing spindle sensitivity. During voluntary movements, alpha and gamma motor neurons are co-activated—as the muscle contracts, gamma neurons prevent spindles from going slack, maintaining sensitivity across the full range of muscle lengths.</p>
+
+    <p><strong>Golgi tendon organs (GTOs)</strong> are tension receptors located at muscle-tendon junctions. They're innervated by Group Ib afferents that fire in proportion to muscle tension. Unlike spindles (which can't distinguish between passive stretch and active contraction), GTOs specifically signal active muscle force. Spindles and GTOs provide complementary information: spindles report length and velocity; GTOs report tension.</p>
+
+    <h2>Spinal Reflexes: Hardwired Sensorimotor Loops</h2>
+
+    <h3>The Stretch Reflex</h3>
+
+    <p>The stretch reflex (myotatic reflex) is the simplest reflex in the nervous system: a monosynaptic arc from muscle spindle to alpha motor neuron back to the same muscle. When a muscle is stretched (e.g., tapping the patellar tendon), spindle Ia afferents fire, exciting alpha motor neurons, causing the muscle to contract, opposing the stretch. This happens in 30-50 milliseconds—too fast for conscious control. The stretch reflex automatically resists length changes, providing stiffness to stabilize joints and maintain posture.</p>
+
+    <h3>Reciprocal Inhibition</h3>
+
+    <p>Muscles are organized in antagonistic pairs: flexors and extensors. To flex your elbow, you must contract the biceps while relaxing the triceps. <strong>Reciprocal inhibition</strong> automatically coordinates antagonists: Ia afferents excite motor neurons of the stretched muscle while simultaneously inhibiting motor neurons of the antagonist via Ia inhibitory interneurons.</p>
+
+    <h3>Central Pattern Generators</h3>
+
+    <p><strong>Central pattern generators (CPGs)</strong> are spinal networks that produce rhythmic motor patterns—walking, running, swimming, scratching—without requiring rhythmic input from the brain. Even isolated spinal cord preparations can generate coordinated locomotor patterns when stimulated. CPGs implement the basic rhythm and coordination; descending pathways initiate, terminate, and modulate the pattern.</p>
+
+    <h2>Descending Motor Pathways</h2>
+
+    <h3>The Corticospinal Tract</h3>
+
+    <p>The corticospinal tract (CST) is the primary pathway for voluntary movement, especially skilled movements of the distal extremities. CST axons originate from pyramidal neurons in motor cortex, descend through the internal capsule, form the pyramids on the ventral medulla, and at the <strong>pyramidal decussation</strong> most fibers (85-90%) cross to the contralateral side. This anatomical crossing explains <strong>contralateral motor control</strong>: left motor cortex controls right body, right motor cortex controls left body.</p>
+
+    <h3>Upper vs. Lower Motor Neuron Lesions</h3>
+
+    <p><strong>Lower motor neurons</strong> are alpha motor neurons. LMN lesions cause flaccid paralysis, muscle atrophy, absent reflexes, and fasciculations. <strong>Upper motor neurons</strong> are descending pathways from cortex and brainstem. UMN lesions cause spastic paralysis, hyperreflexia, clonus, and Babinski sign. The spasticity following UMN lesions occurs because descending pathways normally suppress spinal reflexes.</p>
+
+    <h2>Motor Cortex: Maps, Populations, and Plans</h2>
+
+    <h3>Primary Motor Cortex (M1)</h3>
+
+    <p>Primary motor cortex (M1, Brodmann area 4) occupies the precentral gyrus. Wilder Penfield created the famous <strong>motor homunculus</strong>—a distorted body representation where cortical area is proportional to motor control precision, not body part size. Hands and face receive disproportionate representation; trunk and legs have smaller representations.</p>
+
+    <h3>Population Coding and Directional Tuning</h3>
+
+    <p>Apostolos Georgopoulos discovered that individual M1 neurons are broadly tuned for movement direction. Each neuron has a preferred direction but responds to a wide range. Movement direction is coded by populations—the pattern of activity across many neurons. By computing a <strong>population vector</strong>, you can decode intended movement direction from neural activity with remarkable accuracy. This population code enables brain-computer interfaces—recording from M1 neurons to control robotic arms or computer cursors.</p>
+
+    <h3>Premotor and Supplementary Motor Areas</h3>
+
+    <p><strong>Premotor cortex (PMC)</strong> receives input from parietal cortex and is especially important for sensory-guided movements. PMC neurons encode movement goals in external space, not specific motor commands. <strong>Supplementary motor area (SMA)</strong> is critical for internally generated, self-initiated movements and motor sequences. SMA is active during mental rehearsal and when planning complex sequences.</p>
+
+    <h2>Motor Planning and Forward Models</h2>
+
+    <h3>Forward Models</h3>
+
+    <p>Sensory feedback is slow—30-50 milliseconds for proprioceptive information to reach cortex. Relying only on feedback would produce unstable control. The solution is <strong>forward models</strong>: neural circuits that predict the sensory consequences of motor commands before feedback arrives. When you issue a motor command, a copy (corollary discharge) is sent to forward models that simulate the expected sensory outcome. This predicted feedback is compared with actual feedback; discrepancies signal errors requiring correction.</p>
+
+    <p>Forward models enable smooth, rapid movements despite feedback delays. They explain why you can't tickle yourself—the forward model predicts the sensory consequences of your own movements, canceling the tickling sensation. When someone else tickles you, no forward model predicts it, so the sensation is surprising and intense.</p>
+
+    <h2>Synthesis: Hierarchy, Feedback, and Prediction</h2>
+
+    <p>We've traced motor control from motor units through spinal reflexes, descending pathways, and cortical planning centers. The architecture is hierarchical: each level operates at different timescales and abstractions. Spinal reflexes handle millisecond-scale responses. Brainstem pathways maintain posture. Motor cortex translates plans into commands. Premotor areas specify goals. Parietal cortex transforms sensory information into spatial targets. Prefrontal cortex defines abstract goals.</p>
+
+    <p>Three computational principles unite all levels. First, <strong>feedback control</strong>: sensory information provides error signals for correction. Second, <strong>feedforward control</strong>: forward models predict sensory consequences, enabling fast movements despite feedback delays. Third, <strong>population coding</strong>: movement parameters are represented by patterns across neural populations rather than single neurons.</p>
+
+    <p>Motor control is fundamentally predictive. You don't react to the world as it is but as you predict it will be by the time your movement completes. When you catch a ball, you're moving your hand to where you predict the ball will be when your hand arrives. The entire motor hierarchy participates in this predictive computation.</p>
+
+    <footer class="chapter-footer">
+      <nav class="chapter-footer-nav">
+        <a href="chapter8.html" class="prev">
+          <span class="label">Previous Chapter</span>
+          <span class="title">Attention and Perception</span>
+        </a>
+        <a href="chapter10.html" class="next">
+          <span class="label">Next Chapter</span>
+          <span class="title">Learning and Memory</span>
+        </a>
+      </nav>
+    </footer>
+  </article>
+</body>
+</html>

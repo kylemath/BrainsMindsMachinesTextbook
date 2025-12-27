@@ -1,0 +1,766 @@
+/* 
+ * Brain & Behavior Textbook Styles
+ * Optimized for reading, scrolling, and PDF export
+ * With sidebar outline and progress tracking
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg: #faf8f5;
+  --bg-alt: #f5f2ed;
+  --text: #2c2825;
+  --text-muted: #6b6560;
+  --accent: #8b4513;
+  --accent-light: #a0522d;
+  --border: #d4cfc7;
+  --highlight: #fff8e7;
+  --maxw: 680px;
+  --sidebar-width: 260px;
+  --font-serif: 'Crimson Pro', Georgia, 'Times New Roman', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a1816;
+    --bg-alt: #221f1c;
+    --text: #e8e4df;
+    --text-muted: #9a9590;
+    --accent: #d4a574;
+    --accent-light: #e8c4a0;
+    --border: #3d3835;
+    --highlight: #2a2520;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-serif);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.8;
+  font-size: 19px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =============================================
+   PROGRESS BAR - Top of page
+   ============================================= */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--border);
+  z-index: 1000;
+}
+
+.reading-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  width: 0%;
+  transition: width 0.1s ease-out;
+}
+
+/* =============================================
+   MAIN CONTENT LAYOUT
+   ============================================= */
+.chapter {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 60px 24px 100px;
+}
+
+/* Navigation */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.chapter-nav a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.chapter-nav a:hover {
+  opacity: 0.7;
+}
+
+.chapter-nav .nav-prev,
+.chapter-nav .nav-next {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.chapter-nav .nav-prev::before {
+  content: "←";
+}
+
+.chapter-nav .nav-next::after {
+  content: "→";
+}
+
+.chapter-nav .nav-toc {
+  font-weight: 500;
+}
+
+/* Chapter header */
+.chapter-header {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.chapter-number {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 12px;
+}
+
+.chapter-title {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 16px;
+  letter-spacing: -0.02em;
+}
+
+.chapter-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  font-style: italic;
+  font-weight: 300;
+  margin: 0;
+}
+
+/* Lead paragraph */
+.lead {
+  font-size: 1.15rem;
+  line-height: 1.85;
+  color: var(--text);
+  margin-bottom: 40px;
+}
+
+/* Section headings */
+h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 60px 0 24px;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  scroll-margin-top: 80px;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 40px 0 16px;
+  color: var(--text);
+  scroll-margin-top: 80px;
+}
+
+/* Paragraphs */
+p {
+  margin: 0 0 1.5em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* Links */
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Bold and emphasis */
+strong {
+  font-weight: 600;
+}
+
+em {
+  font-style: italic;
+}
+
+/* Block quotes / callouts */
+blockquote,
+.callout {
+  margin: 30px 0;
+  padding: 20px 24px;
+  background: var(--bg-alt);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+blockquote p:last-child,
+.callout p:last-child {
+  margin-bottom: 0;
+}
+
+/* Key terms */
+.term {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* Section divider */
+.divider {
+  text-align: center;
+  margin: 50px 0;
+  color: var(--border);
+  font-size: 1.5rem;
+  letter-spacing: 0.5em;
+}
+
+.divider::before {
+  content: "• • •";
+}
+
+/* Chapter footer navigation */
+.chapter-footer {
+  margin-top: 80px;
+  padding-top: 30px;
+  border-top: 1px solid var(--border);
+}
+
+.chapter-footer-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.chapter-footer-nav a {
+  flex: 1;
+  padding: 20px;
+  background: var(--bg-alt);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text);
+  transition: background 0.2s;
+}
+
+.chapter-footer-nav a:hover {
+  background: var(--highlight);
+}
+
+.chapter-footer-nav .prev {
+  text-align: left;
+}
+
+.chapter-footer-nav .next {
+  text-align: right;
+}
+
+.chapter-footer-nav .label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.chapter-footer-nav .title {
+  font-weight: 500;
+}
+
+/* =============================================
+   PRINT/PDF STYLES
+   ============================================= */
+@media print {
+  body {
+    font-size: 11pt;
+    line-height: 1.5;
+    color: #000;
+    background: #fff;
+  }
+
+  .chapter {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .chapter-nav,
+  .chapter-footer-nav,
+  .reading-progress,
+  .sidebar-outline,
+  .sidebar-toc {
+    display: none;
+  }
+
+  h2 {
+    page-break-after: avoid;
+    margin-top: 30pt;
+  }
+
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+
+  .callout {
+    border: 1px solid #ccc;
+    background: #f5f5f5;
+  }
+}
+
+/* =============================================
+   RESPONSIVE STYLES
+   ============================================= */
+
+/* Mobile optimizations */
+@media (max-width: 600px) {
+  body {
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  .chapter {
+    padding: 30px 18px 60px;
+  }
+
+  .chapter-nav {
+    font-size: 0.85rem;
+  }
+
+  .chapter-title {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    margin-top: 45px;
+  }
+
+  p {
+    text-align: left;
+    hyphens: none;
+  }
+
+  .chapter-footer-nav {
+    flex-direction: column;
+  }
+
+  .chapter-footer-nav a {
+    text-align: center !important;
+  }
+}
+
+/* Reading mode - larger text option */
+@media (min-width: 1200px) {
+  body.reading-mode {
+    font-size: 21px;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  :root {
+    --text: #000;
+    --text-muted: #333;
+    --accent: #6b3410;
+    --border: #999;
+  }
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* =============================================
+   JAVASCRIPT-GENERATED SIDEBAR LAYOUT
+   ============================================= */
+.chapter-layout {
+  display: flex;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 24px;
+  gap: 30px;
+}
+
+/* TOC Sidebar (far left - all chapters) */
+.sidebar-toc {
+  position: sticky;
+  top: 40px;
+  width: 240px;
+  height: fit-content;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+.sidebar-toc::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar-toc::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-toc::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
+
+/* Content wrapper (contains outline sidebar + article) */
+.content-wrapper {
+  display: flex;
+  flex: 1;
+  gap: 30px;
+  min-width: 0;
+}
+
+/* Outline Sidebar (on this page) */
+.sidebar-outline {
+  position: sticky;
+  top: 40px;
+  width: 220px;
+  height: fit-content;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+.sidebar-outline::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar-outline::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-outline::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
+
+.chapter-layout .chapter {
+  flex: 1;
+  min-width: 0;
+  max-width: var(--maxw);
+}
+
+/* Sidebar title */
+.sidebar-title {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Chapter outline */
+.chapter-outline {
+  margin-bottom: 24px;
+}
+
+.chapter-outline .outline-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.chapter-outline .outline-item {
+  margin: 0;
+}
+
+.chapter-outline .outline-item--sub {
+  margin-left: 12px;
+}
+
+.chapter-outline .outline-link {
+  display: block;
+  padding: 6px 10px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  border-left: 2px solid transparent;
+  border-radius: 0 4px 4px 0;
+  transition: all 0.15s ease;
+}
+
+.chapter-outline .outline-link:hover {
+  color: var(--text);
+  background: var(--bg-alt);
+}
+
+.chapter-outline .outline-link.active {
+  color: var(--accent);
+  border-left-color: var(--accent);
+  background: var(--highlight);
+  font-weight: 500;
+}
+
+.chapter-outline .outline-item--sub .outline-link {
+  font-size: 0.78rem;
+  padding: 5px 10px;
+}
+
+/* Chapter navigation (table of contents) */
+.chapter-navigation {
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.toc-home-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  background: var(--bg-alt);
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.toc-home-link:hover {
+  background: var(--highlight);
+  color: var(--accent-light);
+}
+
+.toc-home-link .home-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.toc-part {
+  margin-bottom: 24px;
+}
+
+.toc-part-title {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.toc-chapter-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+}
+
+.toc-chapter-item {
+  margin: 0;
+}
+
+.toc-chapter-item.current-chapter .toc-chapter-link {
+  background: var(--highlight);
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.toc-chapter-link {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 6px 10px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.toc-chapter-link:hover {
+  color: var(--text);
+  background: var(--bg-alt);
+}
+
+.toc-chapter-num {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  min-width: 16px;
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.toc-chapter-title {
+  flex: 1;
+}
+
+/* Progress indicator */
+.progress-indicator {
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.progress-section {
+  margin-bottom: 16px;
+}
+
+.progress-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.progress-bar {
+  height: 5px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  border-radius: 3px;
+  transition: width 0.2s ease-out;
+  width: 0%;
+}
+
+.progress-chapter-info {
+  margin-top: 12px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+/* =============================================
+   INDEX PAGE LAYOUT
+   ============================================= */
+.index-page .index-layout {
+  display: flex;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 24px;
+  gap: 30px;
+}
+
+.sidebar-toc-static {
+  position: sticky;
+  top: 40px;
+  width: 240px;
+  height: fit-content;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+.sidebar-toc-static::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar-toc-static::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-toc-static::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
+
+.index-page .container {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Hide static sidebar on smaller screens */
+@media (max-width: 1100px) {
+  .sidebar-toc-static {
+    display: none;
+  }
+  
+  .index-page .index-layout {
+    display: block;
+  }
+  
+  .index-page .container {
+    max-width: var(--maxw);
+    margin: 0 auto;
+  }
+}
+
+/* Progressive sidebar hiding on smaller screens */
+@media (max-width: 1400px) {
+  /* Hide outline sidebar on medium screens */
+  .sidebar-outline {
+    display: none;
+  }
+  
+  .content-wrapper {
+    display: block;
+  }
+}
+
+@media (max-width: 1100px) {
+  /* Hide TOC sidebar on smaller screens */
+  .sidebar-toc {
+    display: none;
+  }
+  
+  .chapter-layout {
+    display: block;
+  }
+  
+  .content-wrapper {
+    display: block;
+  }
+  
+  .chapter-layout .chapter {
+    max-width: var(--maxw);
+    margin: 0 auto;
+  }
+}
